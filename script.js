@@ -28,10 +28,10 @@ btn.addEventListener('click', function(){
     const random = Math.floor(Math.random() * quotesArr.length);// random nummber for the quotes array
     quote.textContent = quotesArr[random].quote;
     writer.textContent = quotesArr[random].writer;
-    slideShow();
+    display();
 });
 
-function slideShow(){
+function display(){
     const images = document.querySelectorAll('.slide');
 
     console.log(images)
@@ -41,5 +41,14 @@ function slideShow(){
     }
     index++;
     if(index > images.length) index = 0; // if index exeeded over the images array
+
+	void images[index -1].offsetWidth; // trigger a reflow of the DOM
     images[index - 1].style.display = 'block';
 }
+
+// handling the enter keypress event
+document.addEventListener("keypress", function (event) {
+	if (event.key === "Enter") {
+		display();
+	}
+});
