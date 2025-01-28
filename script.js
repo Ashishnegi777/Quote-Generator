@@ -1,6 +1,7 @@
 const btn = document.getElementById('N-q');
 const quote = document.querySelector('.quotes-line');
 const  writer = document.querySelector(".writer");
+const image = document.querySelector(".img-section");
 let index = 0;// track of images
 
 const quotesArr = [
@@ -52,3 +53,27 @@ document.addEventListener("keypress", function (event) {
 		display();
 	}
 });
+
+
+//activate when Mouse Move event occurs 
+document.addEventListener("mousemove", function (event, elementPre) {
+	tilt(event);
+});
+
+function tilt(event) {
+	
+	const x = event.clientX;// get the horizontal mouse cursor coordinates from left
+	const y = event.clientY;// get the verticale mouse cursor coordinates from top
+
+	//finding the middle
+	const mWidth = window.innerWidth / 2;
+	const mHeight = window.innerHeight / 2;
+
+	//offset form middle
+	const offsetX = ((x - mWidth) / mWidth) * 5;
+	const offsetY = ((y - mHeight) / mWidth) * 4;
+
+	//Updating the CSS Variable
+	image.style.setProperty("--rotateX",  offsetX + "deg");// converts the value to the string and then assign it to the CSS Variable
+	image.style.setProperty("--rotateY", offsetY + "deg");
+}

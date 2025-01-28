@@ -15,6 +15,10 @@
 }
 body{
     background-color: #161F28;
+    -webkit-font-smoothing: antialiased;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+    overflow: hidden;
 }
 ::selection{
     background-color: var(--cyan);
@@ -47,6 +51,7 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
+    filter: brightness(.7);
     object-fit: cover;
 }
 
@@ -89,6 +94,16 @@ body{
     backdrop-filter: blur(0.8px);
     cursor: pointer;
     color: var(--white);
+}
+
+.img-section {
+	position: absolute;
+	transform-style: preserve-3d;
+	height: 100%;
+	width: 100%;
+	transform: perspective(5000px) rotateX(var(--rotateX)) rotateY(var(--rotateY))
+		scale(1.07);
+	transition: 0.5 ease-in-out;
 }
 
 .fade{
