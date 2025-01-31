@@ -11,8 +11,9 @@
 
 @font-face {
     font-family: ink;
-    src: url(Inkfree.ttf);
+    src: url(fonts/Inkfree.ttf);
 }
+
 body{
     background-color: #161F28;
     -webkit-font-smoothing: antialiased;
