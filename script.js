@@ -4,22 +4,41 @@ const  writer = document.querySelector(".writer");
 const image = document.querySelector(".img-section");
 let index = 0;// track of images
 
-const quotesArr = [
-    {
+const quotes = [
+	{
 		quote: `"The End Is The Beginning And The Beginning Is The End."`,
 		writer: `Adam (Dietrich Hollinderbaumer)`,
+		exp: `"There are beliefs throughout the world that death is only the beginning of a new stage of existence. In Dark, with the show's time travel element, that idea is shown to be a literal starting over of the timeline and attempting to fix the mistakes of the past."`,
 	},
 	{
 		quote: `"Our Mistake In All Of Our Thinking Is That We Each Believe Ourselves To Be An Independent Entity; One Self Beside Countless Other Selves."`,
 		writer: `Eve (Barbara Nüsse)`,
+		exp: `"Stories about the multiverse have become extremely popular to the point of some feeling the concept has grown stale. However, Dark was early to the trend, using the concept for some of its biggest twists and most exciting storytelling developments. It also introduced the idea that each person is connected to their existence in other realities."`,
 	},
 	{
 		quote: `"The Distinction Between Past, Present, And Future Is Nothing But An Illusion."`,
 		writer: `Opening Narration`,
+		exp: `"esterday, Today, and Tomorrow Are Not Consecutive, They Are Connected In A Never-Ending Circle. Everything Is Connected."`,
 	},
 	{
 		quote: `"I've Woken Up And I No Longer Know If I'm A Person Who Dreamed He's A Butterfly Or If I'm A Butterfly Who's Dreaming It's A Person."`,
 		writer: `Ines Kahnwald (Angela Winkler)`,
+		exp: `"There is a lot to unpack in Dark, both for the viewers and for the characters themselves. Many characters know this and admit as much, allowing the audience to breathe a sigh of relief when they struggle to figure out what is in the series."`,
+	},
+	{
+		quote: `"Expectations Lead To Disappointment. Have Hope, Not Expectations. You Might Just Be Surprised, But Not Disappointed."`,
+		writer: `Inspector Clausen (Sylvester Groth)`,
+		exp: ``,
+	},
+	{
+		quote: `"Your Pain Defines Who You Are, But It No Longer Holds Power Over You."`,
+		writer: `Noah (Mark Waschke)`,
+		exp: `"It is a powerful idea and a reminder that a person's past, whether it be good or bad, does not have to set them down a preordained path. Using the lessons and determination that come from suffering allows them to build a new future for themselves."`,
+	},
+	{
+		quote: `"You And I Are Perfect For Each Other. Never Believe Anything Else."`,
+		writer: `Jonas Kahnwald `,
+		exp: `"gsap.min.js:10 Invalid property easing set to power4.out Missing plugin? gsap.registerPlugin()"`,
 	},
 ];
 
