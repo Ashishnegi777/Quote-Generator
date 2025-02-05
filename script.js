@@ -108,4 +108,35 @@ setTimeout(grained('#body', {
 	'grainWidth': 1, // Grain particle width
 	'grainHeight': 1,
 	'grainColor': '#000' 
-}),5000)
+}),5000);
+
+
+//pre loader counter
+function startloader() {
+	let count = 0;
+
+	function updateCounter() {
+		// if the reached to the 100 then return
+		if (count === 100) {
+			return;
+		}
+		//generating the random number between 0 to 10
+		count += Math.floor(Math.random() * 10) + 1;
+
+		//if number get out of the 100, initializinf with 100 again
+		if (count > 100) count = 100;
+
+		//updating the HTML element
+		counter.textContent = count + "%";
+
+		// updating the browser loading bar according to the count progress
+		bar.style.width = `${count}%`;
+
+		// generating a fake delay
+		let delay = Math.floor(Math.random() * 200) + 50;
+		setTimeout(updateCounter, delay);
+	}
+
+	requestAnimationFrame(updateCounter);
+}
+startloader();
