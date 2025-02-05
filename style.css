@@ -117,4 +117,33 @@ body{
     }
 }
 
+.explanation {
+	position: absolute;
+	width: 20%;
+	top: 10%;
+	left: 7%;
+	background: rgba(171, 171, 171, 0.1);
+	background-size: 100%;
+	backdrop-filter: blur(4px);
+	border-radius: 0.55rem;
+	padding: 2.25rem;
+	line-height: 1.5rem;
+	letter-spacing: 0.02em;
+	font-family: var(--ff-DD-display);
+	font-family: ink;
+	font-style: italic;
+	font-weight: 100;
+
+	/* overflow: hidden;
+	background-size:cover;
+	background-position: 100%; */
+}
+
+.ex-img {
+	width: -webkit-fill-available;
+	display: none;
+	animation: fadeUp 1s ease-in-out;
+	border-radius: 0.15rem;
+}
+
 
