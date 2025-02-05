@@ -1,37 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 
-:root{
-    --blue: #1A3347;
-    --cyan: #588CA2;
-    --green: #1D322B;
-    --white: #CACBCC;
-    --un: #161F28;
-    --ff-pop:  "Poppins", sans-serif;
+:root {
+	--blue: #1a3347;
+	--cyan: #588ca2;
+	--green: #1d322b;
+	--white: #cacbcc;
+	--un: #161f28;
+	--ff-pop: "Poppins", sans-serif;
+	--ff-DD-display: "DM Serif Display", serif;
+	--ff-DM-sans: "DM Sans", serif;
+	--ff-corm:     "Cormorant", serif;
 }
 
 @font-face {
-    font-family: ink;
-    src: url(fonts/Inkfree.ttf);
+	font-family: ink;
+	src: url(fonts/Inkfree.ttf);
 }
 
-body{
-    background-color: #161F28;
-    -webkit-font-smoothing: antialiased;
+@font-face {
+	font-family: DmSans;
+	src: url(fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+	font-family: DmDisplay;
+	src: url(fonts/DMSerifDisplay-Regular.ttf);
+}
+
+@font-face {
+	font-family: ppBold;
+	src: url(fonts/PPPangaia-Bold\ .otf);
+}
+
+@font-face {
+	font-family: ppItalic;
+	src: url(fonts/PPPangaia-italic.otf);
+}
+@font-face {
+	font-family: arti;
+	src: url(fonts/articulatcf-bold.otf);
+}
+
+@font-face {
+	font-family: sfPro;
+	src: url(fonts/SFPRODISPLAYBOLD.OTF);
+}
+body {
+	background-color: #202020;
+	-webkit-font-smoothing: antialiased;
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
-    overflow: hidden;
-}
-::selection{
-    background-color: var(--cyan);
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: var(--white);
+	overflow: hidden;
+	
+	transform: perspective(1000px);
 }
 
+::selection {
+	background-color: white;
+	color: black;
+	mix-blend-mode: difference;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: var(--white);
+}
 
 .base {
 	height: 100vh;
@@ -39,9 +74,11 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	/* font-family: var(--ff-pop); */
 	font-weight: 200;
 	position: relative;
 	scale: .7;
+	/* background: url(Img/windin.jpg) no-repeat center/cover; */
 }
 .img {
 	position: absolute;
@@ -54,44 +91,92 @@ body{
 	filter: brightness(0.6);
 }
 
-.glass-bg{
-    min-width: 15rem;
-    width: 35%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    background: rgba( 226, 225, 225, 0.1 );
-    backdrop-filter: blur(0.8px);
-    border-radius: 0.75rem;
-    padding: 2.25rem;
-    font-family: ink;
-    line-height: 1.75rem;
+.glass-bg {
+	min-width: 15rem;
+	width: 35%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	/* background: rgba(197, 197, 197, 0.1);
+	backdrop-filter: blur(0.7px);
+	border-radius: 0.75rem; */
+	padding: 2.25rem;
+	line-height: 1.75rem;
+	position: absolute;
+    right: 10%;
 }
-.quotes-line{
-    font-size: clamp(0.75rem, 0.033rem + 3.475vw, 3.25);
+.quotes-line {
+	/* font-size: clamp(0.75rem, 0.033rem + 3.475vw, 3.25rem); */
+	font-style: italic;
+	font-weight: 300;
+	font-size: clamp(0.55rem, 0.3750rem + 0.9333vw, 1.25rem);
+	font-family: DmSans;
+	font-family: ppBold;
+	word-spacing: .15em;
+	letter-spacing: .02em;
 }
-.writer{
-    font-size: clamp(0.55rem, 0.45rem + 0.5333vw, 0.95rem);
-    text-transform: uppercase;
-    text-align: end;
-    font-style: italic;
+.writer {
+	/* font-size: clamp(0.75rem, 0.6250rem + 0.6667vw, 1.25rem); */
+	font-size: clamp(0.55rem, 0.45rem + 0.5333vw, 0.95rem);
+	text-transform: uppercase;
+	text-align: end;
+	font-weight: 400;
+	font-style: normal;
+	/* font-style: italic;*/
+	font-family: DmDisplay;
+	/* font-family: "Space Grotesk", serif; */
+	font-size: 0.85rem;
+	font-family: "Inter", serif;
 }
 
-.btn-warper button{
-    padding: 0.55rem;
-    border: 0;
-    border-radius: .15rem;
-    font-weight: 600;
-    color: var(--blue);
-    transition: all 0.2s ease-in-out;
+.btn-warper button {
+	padding: 0.55rem;
+	border: 0;
+	border-radius: 0.15rem;
+	font-weight: 600;
+	color: var(--blue);
+	transition: all 0.2s ease-in-out;
+	font-family: var(--ff-DD-display);
+	/* display: none; */
 }
 
-.new-Q:hover{
-    background: rgba(219, 220, 219, 0.479);
-    backdrop-filter: blur(0.8px);
-    cursor: pointer;
-    color: var(--white);
+.new-Q:hover {
+	background: rgba(219, 220, 219, 0.479);
+	backdrop-filter: blur(0.8px);
+	cursor: pointer;
+	color: var(--white);
+}
+
+.slide.fade {
+	animation: fadeUp 1.5s ease-in-out;
+}
+
+
+.quote-text{
+	display: flex;
+	align-items: end;
+	justify-content: flex-end;
+	z-index: 5;
+	width: 30%;
+	position: absolute;
+    right: 10%;
+
+}
+.text{
+	font-family: ppBold;
+	font-size: 1.25rem;
+	letter-spacing: .01em;
+	word-spacing: .15em;
+
+}
+@keyframes fadeUp {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 100%;
+	}
 }
 
 .img-section {
@@ -104,20 +189,7 @@ body{
 	transition: 0.5 ease-in-out;
 }
 
-.fade{
-    animation: fadeUp 1.5s ease-in-out;
-}
-
-@keyframes fadeUp {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 100%;
-    }
-}
-
-.explanation {
+.explaination {
 	position: absolute;
 	width: 20%;
 	top: 10%;
@@ -147,3 +219,82 @@ body{
 }
 
 
+.word-warp{
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+.pre-text{
+	font-family: arti;
+	color: black;
+	font-size: 2rem;
+}
+.pre-loader{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: 5;
+	background-color: #d2d2d2;
+	/* display: none; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	pointer-events: none;
+	/* display: none; */
+}
+
+.counter{
+	font-size: 1.25rem;
+	font-family: var(--ff-pop);
+	color: #1e1e1e;
+	width: 4%;
+	align-content: center;
+}
+
+.loading-bar{
+	border-bottom: 3px solid #5c5c5c;
+    width: 15rem;
+    position: fixed;
+    top: 53%;
+    left: 42%;
+	/* position: relative; */
+	
+}
+
+.bar{
+	content: '';
+    position: absolute;
+    width: 0%;
+    height: inherit;
+    z-index: 555;
+    border-bottom: 3px solid transparent;
+	border-image: linear-gradient(45deg, #ed2424, #cf7070);
+	border-image-slice: 1;
+	transition: width ease .2s;
+}
+
+.video{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.circle{
+	width: .1rem;
+	height: .1rem;
+	border-radius: 50%;
+	position: absolute;
+	background-color: #ececec;
+	transition: top, left .3 ease;
+	mix-blend-mode: difference;
+	z-index: 555;
+	left: 54%;
+    top: 49.5%;
+	
+}
