@@ -96,3 +96,16 @@ function tilt(event) {
 	image.style.setProperty("--rotateX",  offsetX + "deg");// converts the value to the string and then assign it to the CSS Variable
 	image.style.setProperty("--rotateY", offsetY + "deg");
 }
+
+
+
+setTimeout(grained('#body', {
+	'animate': false, 
+	'patternWidth': 1000, // Width of the grain pattern
+	'patternHeight': 1000, 
+	'grainOpacity': 0.2, // Opacity of the grain
+	'grainDensity': 10, // Grain density
+	'grainWidth': 1, // Grain particle width
+	'grainHeight': 1,
+	'grainColor': '#000' 
+}),5000)
