@@ -1,7 +1,16 @@
-const btn = document.getElementById('N-q');
-const quote = document.querySelector('.quotes-line');
-const  writer = document.querySelector(".writer");
+
+let btn = document.querySelector("#N-q");
+let quote = document.querySelector(".quotes-line");
+let writer = document.querySelector(".writer");
+const exp = document.querySelector(".ex-text");
 const image = document.querySelector(".img-section");
+const card = document.querySelector(".glass-bg");
+
+const loader = document.querySelector(".pre-loader");
+const counter = document.querySelector(".counter");
+const loadingBar = document.querySelector(".loading-bar");
+const bar = document.querySelector(".bar");
+const video = document.querySelector(".video");
 let index = 0;// track of images
 
 const quotes = [
@@ -188,5 +197,24 @@ function unFlip() {
 		scale: 0.7,
 		delay: 1,
 		ease: "power2.out",
+	});
+};
+
+function moveOut() {
+	const t2 = gsap.timeline({ default: { duration: 1.2 } });
+	t2.to(".explaination", {
+		x: -100,
+		y: -80,
+		delay: 1.5,
+		ease: "power4.out",
+	});
+};
+
+function moveIn() {
+	gsap.to(".explaination", {
+		duration: 1,
+		x: 1,
+		y: 1,
+		ease: "power.out",
 	});
 };
