@@ -140,3 +140,27 @@ function startloader() {
 	requestAnimationFrame(updateCounter);
 }
 startloader();
+
+
+gsap.from(".base", {
+	duration: 1.5,
+	delay: 4,
+	scale: 0.7,
+	ease: "power4.out",
+});
+gsap.ticker.lagSmoothing(10000, 16);
+
+const timeLine = gsap.timeline({ default: { duration: 2 } });
+timeLine
+	.to(".pre-loader", {
+		// duration: 1,
+		delay: 4,
+		opacity: 0,
+		scale: 2,
+		ease: "power4.in",
+		force3D: true,
+	},"-=0")
+	.from(".body", {
+		background: "#ffff",
+		ease: "power.out",
+	});
