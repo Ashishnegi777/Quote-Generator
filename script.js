@@ -148,7 +148,7 @@ gsap.from(".base", {
 	scale: 0.7,
 	ease: "power4.out",
 });
-gsap.ticker.lagSmoothing(10000, 16);
+gsap.ticker.lagSmoothing(10000, 16);// for smooth animation
 
 const timeLine = gsap.timeline({ default: { duration: 2 } });
 timeLine
@@ -164,3 +164,21 @@ timeLine
 		background: "#ffff",
 		ease: "power.out",
 	});
+
+	function flip() {
+	gsap.to(".base", {
+		duration: 1,
+		scale: 0.6,
+		delay: 0.8,
+		ease: "power3.in",
+	});
+};
+
+function unFlip() {
+	gsap.to(".base", {
+		duration: 1,
+		scale: 0.7,
+		delay: 1,
+		ease: "power2.out",
+	});
+};
