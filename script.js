@@ -98,6 +98,14 @@ function tilt(event) {
 }
 
 
+//adding the enter keypress event 
+document.addEventListener("keypress", function (event) {
+	if (event.key === "Enter") {
+		display();
+	}
+});
+
+
 
 setTimeout(grained('#body', {
 	'animate': false, 
@@ -165,7 +173,7 @@ timeLine
 		ease: "power.out",
 	});
 
-	function flip() {
+function flip() {
 	gsap.to(".base", {
 		duration: 1,
 		scale: 0.6,
