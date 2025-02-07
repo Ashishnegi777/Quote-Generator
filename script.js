@@ -60,19 +60,34 @@ btn.addEventListener('click', function(){
     display();
 });
 
-function display(){
-    const images = document.querySelectorAll('.slide');
+function display() {
+	let i;
+	const images = document.querySelectorAll(".slide");
 
-    console.log(images)
-    //setting the all images display none
-    for(let i = 0; i < images.length; i++){
-        images[i].style.display = 'none';
-    }
-    index++;
-    if(index > images.length) index = 0; // if index exeeded over the images array
+	for (i = 0; i < images.length; i++) {
+		images[i].style.display = "none";
+	}
 
-	void images[index -1].offsetWidth; // trigger a reflow of the DOM
-    images[index - 1].style.display = 'block';
+	images.forEach((images) => images.classList.remove("fade"));
+	index++;
+	if (index > images.length) index = 1; // to prevent the error, if index value goes out of images length
+	images[index - 1].style.display = "block";
+
+	//for video part animation
+	if (index == 3) {
+		flip();
+		video.play();
+		moveOut();
+	} else {
+		unFlip();
+		video.pause();
+		moveIn();
+	}
+	void images[index - 1].offsetWidth;
+	images[index - 1].classList.add("fade");
+
+	let audio = document.getElementById("music");
+	audio.play();
 }
 
 // handling the enter keypress event
