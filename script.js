@@ -218,3 +218,27 @@ function moveIn() {
 		ease: "power.out",
 	});
 };
+
+preTextLoader();
+function preTextLoader(){
+	
+		const loaderTimeline = gsap.timeline({default: {ease: "power4.out"}})
+	
+		loaderTimeline.from('.pre-text',{
+			duration: 2,
+			y: 50,
+			color: "red",
+			opacity: 0,
+			stagger: .141,
+		}).to(".circle",{
+			duration: 3,
+			scale: 1500,
+			ease: "power4.inOut",
+		}, '-=1')
+		.from(".base", {
+			duration: 2,
+			scale: 0.6,
+			ease: "power4.out",
+		}, "-=1");
+		
+	};
