@@ -57,6 +57,14 @@ btn.addEventListener('click', function(){
     const random = Math.floor(Math.random() * quotesArr.length);// random nummber for the quotes array
     quote.textContent = quotesArr[random].quote;
     writer.textContent = quotesArr[random].writer;
+
+	// for the image in explanation section
+	if (quotes[random].exp == ``) {
+		document.querySelector(".ex-img").style.display = "block";
+	} else {
+		document.querySelector(".ex-img").style.display = "none";
+	}
+
     display();
 });
 
