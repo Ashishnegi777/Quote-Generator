@@ -5,14 +5,16 @@ let writer = document.querySelector(".writer");
 const exp = document.querySelector(".ex-text");
 const image = document.querySelector(".img-section");
 const card = document.querySelector(".glass-bg");
-
 const loader = document.querySelector(".pre-loader");
 const counter = document.querySelector(".counter");
 const loadingBar = document.querySelector(".loading-bar");
 const bar = document.querySelector(".bar");
 const video = document.querySelector(".video");
-let index = 0;// track of images
+let index = 0;
+const dark = document.getElementById("dark");
 
+
+// quotes array
 const quotes = [
 	{
 		quote: `"The End Is The Beginning And The Beginning Is The End."`,
@@ -52,20 +54,18 @@ const quotes = [
 ];
 
 
-// toggling between the qoutes
-btn.addEventListener('click', function(){
-    const random = Math.floor(Math.random() * quotesArr.length);// random nummber for the quotes array
-    quote.textContent = quotesArr[random].quote;
-    writer.textContent = quotesArr[random].writer;
+btn.addEventListener("click", function quoteGen() {
+	let random = Math.floor(Math.random() * quotes.length); // generating a ramdom number based on quotes length
+	quote.textContent = quotes[random].quote;
+	writer.innerText = quotes[random].writer;
+	exp.textContent = quotes[random].exp;
 
-	// for the image in explanation section
 	if (quotes[random].exp == ``) {
 		document.querySelector(".ex-img").style.display = "block";
 	} else {
 		document.querySelector(".ex-img").style.display = "none";
 	}
-
-    display();
+	display();
 });
 
 function display() {
@@ -81,7 +81,6 @@ function display() {
 	if (index > images.length) index = 1; // to prevent the error, if index value goes out of images length
 	images[index - 1].style.display = "block";
 
-	//for video part animation
 	if (index == 3) {
 		flip();
 		video.play();
@@ -98,7 +97,6 @@ function display() {
 	audio.play();
 }
 
-// handling the enter keypress event
 document.addEventListener("keypress", function (event) {
 	if (event.key === "Enter") {
 		display();
@@ -106,15 +104,13 @@ document.addEventListener("keypress", function (event) {
 });
 
 
-//activate when Mouse Move event occurs 
 document.addEventListener("mousemove", function (event, elementPre) {
-	tilt(event);
+	tilt(event, elementPre);
 });
 
-function tilt(event) {
-	
-	const x = event.clientX;// get the horizontal mouse cursor coordinates from left
-	const y = event.clientY;// get the verticale mouse cursor coordinates from top
+function tilt(event, element) {
+	const x = event.clientX;
+	const y = event.clientY;
 
 	//finding the middle
 	const mWidth = window.innerWidth / 2;
@@ -124,32 +120,22 @@ function tilt(event) {
 	const offsetX = ((x - mWidth) / mWidth) * 5;
 	const offsetY = ((y - mHeight) / mWidth) * 4;
 
-	//Updating the CSS Variable
-	image.style.setProperty("--rotateX",  offsetX + "deg");// converts the value to the string and then assign it to the CSS Variable
+	// console.log(offsetX, offsetY)
+	image.style.setProperty("--rotateX", -1 * offsetX + "deg");
 	image.style.setProperty("--rotateY", offsetY + "deg");
 }
 
-
-//adding the enter keypress event 
-document.addEventListener("keypress", function (event) {
-	if (event.key === "Enter") {
-		display();
-	}
-});
-
-
-
+// gradient function
 setTimeout(grained('#body', {
-	'animate': false, 
-	'patternWidth': 1000, // Width of the grain pattern
-	'patternHeight': 1000, 
-	'grainOpacity': 0.2, // Opacity of the grain
-	'grainDensity': 10, // Grain density
-	'grainWidth': 1, // Grain particle width
-	'grainHeight': 1,
-	'grainColor': '#000' 
-}),5000);
-
+		'animate': false, // Enables animation
+		'patternWidth': 1000, // Width of the grain pattern
+		'patternHeight': 1000, 
+		'grainOpacity': 0.2, // Opacity of the grain
+		'grainDensity': 10, // Grain density
+		'grainWidth': 1, // Grain particle width
+		'grainHeight': 1, 
+		'grainColor': '#000' 
+}),5000)
 
 //pre loader counter
 function startloader() {
@@ -188,7 +174,7 @@ gsap.from(".base", {
 	scale: 0.7,
 	ease: "power4.out",
 });
-gsap.ticker.lagSmoothing(10000, 16);// for smooth animation
+gsap.ticker.lagSmoothing(10000, 16);
 
 const timeLine = gsap.timeline({ default: { duration: 2 } });
 timeLine
@@ -241,6 +227,7 @@ function moveIn() {
 		ease: "power.out",
 	});
 };
+
 
 preTextLoader();
 function preTextLoader(){
