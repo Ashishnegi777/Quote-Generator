@@ -49,7 +49,7 @@ const quotes = [
 	{
 		quote: `"You And I Are Perfect For Each Other. Never Believe Anything Else."`,
 		writer: `Jonas Kahnwald `,
-		exp: `"gsap.min.js:10 Invalid property easing set to power4.out Missing plugin? gsap.registerPlugin()"`,
+		exp: `"Both Martha and Jonas are destined to play their part in their time loops, continuously failing to change the course of time until they realize that their stories are not the origin of their worlds."`,
 	},
 ];
 
