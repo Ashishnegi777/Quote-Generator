@@ -29,7 +29,7 @@ const quotes = [
 	{
 		quote: `"The Distinction Between Past, Present, And Future Is Nothing But An Illusion."`,
 		writer: `Opening Narration`,
-		exp: `"esterday, Today, and Tomorrow Are Not Consecutive, They Are Connected In A Never-Ending Circle. Everything Is Connected."`,
+		exp: `"Yesterday, Today, and Tomorrow Are Not Consecutive, They Are Connected In A Never-Ending Circle. Everything Is Connected."`,
 	},
 	{
 		quote: `"I've Woken Up And I No Longer Know If I'm A Person Who Dreamed He's A Butterfly Or If I'm A Butterfly Who's Dreaming It's A Person."`,
