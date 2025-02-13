@@ -1,4 +1,4 @@
-![Preview](img/quote.jpg)
+![Preview](Img/quote.jpg)
 # DARK
 
 Exhibiting the some of the best quotes form DARK
