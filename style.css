@@ -205,10 +205,8 @@ body {
 	font-family: ink;
 	font-style: italic;
 	font-weight: 100;
-
-	/* overflow: hidden;
-	background-size:cover;
-	background-position: 100%; */
+	font-size: 1.15rem;
+    word-spacing: .1em;
 }
 
 .ex-img {
