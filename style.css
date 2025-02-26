@@ -297,7 +297,7 @@ body {
 	
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
 	body{
 		background-color: #ffffff;
 		display: none;
