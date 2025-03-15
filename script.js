@@ -95,6 +95,7 @@ function display() {
 
 	let audio = document.getElementById("music");
 	audio.play();
+	document.getElementById("bg-score").play();
 }
 
 document.addEventListener("keypress", function (event) {
